@@ -38,8 +38,17 @@ function App() {
     }
 
     checkToken(token)
-      .then((data) => {
-        setCurrentUser(data.data);
+      .then(() => {
+        return api.getUserInfo();
+      })
+      .then((userData) => {
+        const savedEmail = localStorage.getItem("userEmail");
+
+        setCurrentUser({
+          ...userData,
+          email: savedEmail,
+        });
+
         setIsLoggedIn(true);
       })
       .catch((error) => {
@@ -161,12 +170,11 @@ function App() {
     return authorize(email, password)
       .then((data) => {
         localStorage.setItem("jwt", data.token);
+        localStorage.setItem("userEmail", email);
 
         return api.getUserInfo();
       })
       .then((userData) => {
-        console.log("USUÁRIO COMPLETO:", userData);
-
         setCurrentUser({
           ...userData,
         email,
@@ -175,7 +183,6 @@ function App() {
         setIsLoggedIn(true);
         history.push("/");
       })
-
       .catch((error) => {
         console.error(error);
       });
@@ -187,6 +194,8 @@ function App() {
 
   function handleSignOut() {
     localStorage.removeItem("jwt");
+    localStorage.removeItem("userEmail");
+    setCurrentUser({});
     setIsLoggedIn(false);
     history.push("/signin");
   }

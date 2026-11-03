@@ -200,14 +200,14 @@ src/
 │   ├── ProtectedRoute.jsx
 │   ├── Register.jsx
 │   └── ...
+│
+├── contexts/
+│   └── CurrentUserContext.jsx
+│
+└── index.css
 
 ## Demonstração
 
 A aplicação está publicada na Vercel:
 
 [Acessar Around Auth](https://web-project-around-auth-iota.vercel.app/)
-│
-├── contexts/
-│   └── CurrentUserContext.jsx
-│
-└── index.css

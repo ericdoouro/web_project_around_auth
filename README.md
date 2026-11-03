@@ -6,6 +6,12 @@ O projeto começou como uma aplicação de perfil baseada no projeto **Around**,
 
 A versão atual do projeto inclui fluxo de **cadastro, login, logout e proteção de rotas**, além das funcionalidades originais de gerenciamento de perfil e cartões.
 
+## Demonstração
+
+A aplicação está publicada na Vercel:
+
+[Acessar Around Auth](https://web-project-around-auth-iota.vercel.app/)
+
 ---
 
 ## Funcionalidades
@@ -205,9 +211,3 @@ src/
 │   └── CurrentUserContext.jsx
 │
 └── index.css
-
-## Demonstração
-
-A aplicação está publicada na Vercel:
-
-[Acessar Around Auth](https://web-project-around-auth-iota.vercel.app/)
